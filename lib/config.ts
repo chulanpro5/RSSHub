@@ -341,11 +341,11 @@ export type Config = {
         username?: string[];
         password?: string[];
         authenticationSecret?: string[];
+        mobileOAuthToken?: string[];
+        mobileOAuthSecret?: string[];
         phoneOrEmail?: string[];
         authToken?: string[];
         thirdPartyApi?: string;
-        mobileKey?: string;
-        mobileSecret?: string;
     };
     uestc: {
         bbsCookie?: string;
@@ -780,11 +780,11 @@ const calculateValue = () => {
             username: envs.TWITTER_USERNAME?.split(','),
             password: envs.TWITTER_PASSWORD?.split(','),
             authenticationSecret: envs.TWITTER_AUTHENTICATION_SECRET?.split(','),
+            mobileOAuthToken: envs.TWITTER_MOBILE_OAUTH_TOKEN?.split(','),
+            mobileOAuthSecret: envs.TWITTER_MOBILE_OAUTH_SECRET?.split(','),
             phoneOrEmail: envs.TWITTER_PHONE_OR_EMAIL?.split(','),
             authToken: envs.TWITTER_AUTH_TOKEN?.split(','),
             thirdPartyApi: envs.TWITTER_THIRD_PARTY_API,
-            mobileKey: envs.TWITTER_MOBILE_KEY,
-            mobileSecret: envs.TWITTER_MOBILE_SECRET,
         },
         uestc: {
             bbsCookie: envs.UESTC_BBS_COOKIE,

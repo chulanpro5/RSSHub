@@ -6,11 +6,11 @@ let tokenIndex = 0;
 
 async function getToken() {
     let token;
-    if (config.twitter.mobileKey && config.twitter.mobileSecret) {
+    if (config.twitter.mobileOAuthToken && config.twitter.mobileOAuthSecret) {
+        const index = tokenIndex++ % config.twitter.mobileOAuthToken.length;
         token = {
-            key: config.twitter.mobileKey,
-            secret: config.twitter.mobileSecret,
-            cacheKey: 'twitter:mobile-api-token',
+            key: config.twitter.mobileOAuthToken[index],
+            secret: config.twitter.mobileOAuthSecret[index],
         };
     } else if (config.twitter.username && config.twitter.password) {
         const index = tokenIndex++ % config.twitter.username.length;
